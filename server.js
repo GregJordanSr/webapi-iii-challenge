@@ -9,7 +9,11 @@ server.get('/', (req, res) => {
 //custom middleware
 
 function logger(req, res, next) {
-
+  console.log(
+    `[${new Date().toISOString()}] ${req.method} to ${req.url} from ${rea.get('Origin'
+    )}`
+  )
+  next();
 };
 
 module.exports = server;
